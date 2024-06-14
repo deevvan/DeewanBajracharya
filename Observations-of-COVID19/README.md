@@ -57,19 +57,8 @@ Several datasets listed above must be loaded from various sources using read.csv
       
 ### 6. Merging Data:
 State hospitalization, case, death, and vaccination data are merged by state name to create a combined dataset.
-      
-### 7. Visualization - Combined Graph:
-◦ A combined ggplot2 plot is created to visualize:
-
-  a) Cumulative vaccination rate per 1000 people (y-axis) for each state.
-  
-  b) Daily hospitalization rate per 1000 people (right y-axis) for each state.
-  
-  c) Line colors are used to differentiate between vaccination types and hospitalization rates.
-  
-◦ The x-axis displays states sorted by their overall vaccination rate.
-      
-### 8. Correlation Analysis (Optional):
+            
+### 7. Correlation Analysis (Optional):
 ◦ A subset of the data is created to focus on dates with corresponding vaccination data.
 
 ◦ Non-cumulative daily vaccinations are calculated.
@@ -78,14 +67,28 @@ State hospitalization, case, death, and vaccination data are merged by state nam
 
 ◦ A scatter plot is generated to visualize the correlation.
       
-### 9. Vaccinated vs. Unvaccinated Hospitalization Rates:
+### 8. Vaccinated vs. Unvaccinated Hospitalization Rates:
 ◦ Data on hospitalization rates by vaccination status is loaded from the CDC.
 
 ◦ Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.
 
 ◦ A line chart is created to compare these rates over time.
 
+### 9. Visualization - Combined Graph:
+◦ A combined ggplot2 plot is created to visualize:
 
+    a) State-wise Cumulative hospitalizations per 1000 VS lab confirmed total COVID19 cases and pre Omicron cases per 1000 respectively.
+  
+    b) State-wise Cumulative hospitalizations per 1000 VS lab confirmed total COVID19 deaths and pre Delta deaths per 1000 respectively.
+  
+    c) Cumulative national vaccinations per 1000 VS daily hospital admissions with lab confirmed COVID19 hospitalizations.
+
+    d) Vaccinated Vs Unvaccinated hospitalized populations
+
+    e) National daily VOC estimates for Alpha, Delta and Omicron variants for the entire 3 year period of data collection.
+
+    f) Regional distribution of daily disease outcomes in cases, hospitalizations and deaths compared to regional cumulative vaccinations per 1000.
+  
 ```
 ## R packages required for to run the script
 
