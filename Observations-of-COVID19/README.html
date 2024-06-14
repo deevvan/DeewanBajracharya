@@ -397,51 +397,60 @@ in script</p>
 </div>
 <div id="load-data" class="section level3">
 <h3>2. Load Data:</h3>
-<pre><code>            Several datasets listed above must be loaded from various sources using read.csv function. </code></pre>
+<blockquote>
+<pre><code> Several datasets listed above must be loaded from various sources using read.csv function. </code></pre>
+</blockquote>
 </div>
 <div id="state-hospitalization-data" class="section level3">
 <h3>3. State Hospitalization Data:</h3>
-<pre><code>            ◦    Daily hospitalization data is calculated by aggregating hospital admissions for each state across dates.
-            ◦    Data for territories (marked by specific codes) is excluded.</code></pre>
+<blockquote>
+<pre><code> ◦    Daily hospitalization data is calculated by aggregating hospital admissions for each state across dates.
+ ◦    Data for territories (marked by specific codes) is excluded.</code></pre>
+</blockquote>
 </div>
 <div id="state-vaccination-data" class="section level3">
 <h3>4. State Vaccination Data:</h3>
-<pre><code>            ◦    Daily vaccination data is calculated by summing vaccinations administered for each state across dates.
-            ◦    Data for territories is excluded.
-            ◦    Vaccination data is further categorized by vaccine type (Pfizer, Moderna, Jansen and Novavax).
-            ◦    Vaccination rates are calculated by dividing the cumulative vaccination count by the population over 10 years old </code></pre>
+<pre><code>  ◦    Daily vaccination data is calculated by summing vaccinations administered for each state across dates.
+  ◦    Data for territories is excluded.
+  ◦    Vaccination data is further categorized by vaccine type (Pfizer, Moderna, Jansen and Novavax).
+  ◦    Vaccination rates are calculated by dividing the cumulative vaccination count by the population over 10 years old 
+  </code></pre>
 </div>
 <div id="state-cases-and-deaths-data" class="section level3">
 <h3>5. State Cases and Deaths Data:</h3>
-<pre><code>            ◦    Daily new cases and deaths reported for each state.
-            ◦    Data for territories is excluded.
-            ◦    Cases and Deaths related data were further separated and accounted into rates and cumulative rates.</code></pre>
+<pre><code>  ◦    Daily new cases and deaths reported for each state.
+  ◦    Data for territories is excluded.
+  ◦    Cases and Deaths related data were further separated and accounted into rates and cumulative rates.
+  </code></pre>
 </div>
 <div id="merging-data" class="section level3">
-<h3>6 Merging Data:</h3>
-<pre><code>            ◦    State hospitalization, case, death, and vaccination data are merged by state name to create a combined dataset.</code></pre>
+<h3>6. Merging Data:</h3>
+<pre><code>  ◦    State hospitalization, case, death, and vaccination data are merged by state name to create a combined dataset.
+  </code></pre>
 </div>
 <div id="visualization---combined-graph" class="section level3">
-<h3>6 Visualization - Combined Graph:</h3>
-<pre><code>            ◦    A combined ggplot2 plot is created to visualize:
-                    a) Cumulative vaccination rate per 1000 people (y-axis) for each state.
-                    b) Daily hospitalization rate per 1000 people (right y-axis) for each state.
-                    c) Line colors are used to differentiate between vaccination types and hospitalization rates.
-            ◦    The x-axis displays states sorted by their overall vaccination rate.</code></pre>
+<h3>7. Visualization - Combined Graph:</h3>
+<pre><code>  ◦    A combined ggplot2 plot is created to visualize:
+       a) Cumulative vaccination rate per 1000 people (y-axis) for each state.
+       b) Daily hospitalization rate per 1000 people (right y-axis) for each state.
+       c) Line colors are used to differentiate between vaccination types and hospitalization rates.
+  ◦    The x-axis displays states sorted by their overall vaccination rate.
+  </code></pre>
 </div>
 <div id="correlation-analysis-optional" class="section level3">
-<h3>7 Correlation Analysis (Optional):</h3>
-<pre><code>            ◦    A subset of the data is created to focus on dates with corresponding vaccination data.
-            ◦    Non-cumulative daily vaccinations are calculated.
-            ◦    Pearson&#39;s correlation coefficient is computed to assess the relationship between non-cumulative vaccinations and hospitalization rates.
-        ◦    A scatter plot is generated to visualize the correlation.</code></pre>
+<h3>8. Correlation Analysis (Optional):</h3>
+<pre><code>  ◦    A subset of the data is created to focus on dates with corresponding vaccination data.
+  ◦    Non-cumulative daily vaccinations are calculated.
+  ◦    Pearson&#39;s correlation coefficient is computed to assess the relationship between non-cumulative vaccinations and hospitalization rates.
+  ◦    A scatter plot is generated to visualize the correlation.
+  </code></pre>
 </div>
 <div id="vaccinated-vs.-unvaccinated-hospitalization-rates" class="section level3">
-<h3>8 Vaccinated vs. Unvaccinated Hospitalization Rates:</h3>
-<pre><code>            ◦    Data on hospitalization rates by vaccination status is loaded from the CDC.
-            ◦    Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.
-            ◦    A line chart is created to compare these rates over time.</code></pre>
-<pre><code>##R packages required for to run the script
+<h3>9. Vaccinated vs. Unvaccinated Hospitalization Rates:</h3>
+<pre><code>  ◦    Data on hospitalization rates by vaccination status is loaded from the CDC.
+  ◦    Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.
+  ◦    A line chart is created to compare these rates over time.</code></pre>
+<pre><code>## R packages required for to run the script
 
 ## Check for installed packages
 pkgs &lt;- c(&quot;dplyr&quot;, &quot;tidyr&quot;, &quot;ggplot2&quot;, &quot;data.table&quot;, &quot;cowplot&quot;, &quot;zoo&quot;, 
