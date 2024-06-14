@@ -10,13 +10,21 @@
 
 ## Data Sources:
 > [CDC hospitalization data](https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD/)
+
 > [COVID Tracking Project data](https://covidtracking.com/data/download/all-states-history.csv)
+
 > [CDC vaccination data](https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD)
+
 > [CDC vaccination rates by vaccination status](https://data.cdc.gov/api/views/k3na-u7xf/rows.csv?accessType=DOWNLOAD)
+
 > US Census data: csv files provided in script
+
 > CDC cases and deaths data: csv file provided in script
+
 > US vaccination hesitancy data: csv files provided in script
+
 > National available hospital bed data: csv files provided in script
+
 > National VOC estimation data from covSPECTRUM: csv files provided in script
 
 
