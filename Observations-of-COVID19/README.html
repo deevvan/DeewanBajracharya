@@ -374,34 +374,30 @@ utilizes various R packages for data manipulation, visualization, and
 statistical analysis.</h3>
 </div>
 </div>
-</div>
-<div id="table-of-contents" class="section level1">
-<h1>Table of Contents</h1>
-<ol style="list-style-type: decimal">
-<li><a href="#Data-Sources">Data Sources</a></li>
-<li><a href="#System-requirements">System requirements</a></li>
-<li><a href="#Usage">Usage</a></li>
-<li><a href="#Input">Input</a></li>
-<li><a href="#Output">Output</a></li>
-<li><a href="#Test-and-model-data">Test and model data</a></li>
-</ol>
 <div id="data-sources" class="section level2">
-<h2>Data Sources</h2>
-<pre><code>•    CDC hospitalization data: https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD
-•    COVID Tracking Project data: https://covidtracking.com/data/download/all-states-history.csv
-•    US Census data: (paths provided in script)
-•    CDC vaccination data: https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD
-•    CDC vaccination rates by vaccination status: https://data.cdc.gov/api/views/k3na-u7xf/rows.csv?accessType=DOWNLOAD</code></pre>
+<h2>Data Sources:</h2>
+<blockquote>
+<p>• CDC hospitalization data: <a href="https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD" class="uri">https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD</a></p>
+<p>• COVID Tracking Project data: <a href="https://covidtracking.com/data/download/all-states-history.csv" class="uri">https://covidtracking.com/data/download/all-states-history.csv</a></p>
+<p>• CDC vaccination data: <a href="https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD" class="uri">https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD</a></p>
+<p>• CDC vaccination rates by vaccination status: <a href="https://data.cdc.gov/api/views/k3na-u7xf/rows.csv?accessType=DOWNLOAD" class="uri">https://data.cdc.gov/api/views/k3na-u7xf/rows.csv?accessType=DOWNLOAD</a></p>
+<p>• US Census data: csv files provided in script</p>
+<p>• CDC cases and deaths data: csv file provided in script</p>
+<p>• US vaccination hesitancy data: csv files provided in script</p>
+<p>• National available hospital bed data: csv files provided in
+script</p>
+<p>• National VOC estimation data from covSPECTRUM: csv files provided
+in script</p>
+</blockquote>
 </div>
 <div id="script-steps" class="section level2">
 <h2>Script Steps:</h2>
 <div id="load-libraries" class="section level3">
-<h3>1. Load Libraries:</h3>
-<pre><code>            The script begins by loading required R libraries, including dplyr, tidyr, ggplot2, and others for data manipulation and visualization.</code></pre>
+<h3>1. Load Libraries</h3>
 </div>
 <div id="load-data" class="section level3">
 <h3>2. Load Data:</h3>
-<pre><code>            Several datasets are loaded from various sources using read.csv function. The script handles missing values and date formatting for each dataset.</code></pre>
+<pre><code>            Several datasets listed above must be loaded from various sources using read.csv function. </code></pre>
 </div>
 <div id="state-hospitalization-data" class="section level3">
 <h3>3. State Hospitalization Data:</h3>
@@ -412,33 +408,39 @@ statistical analysis.</h3>
 <h3>4. State Vaccination Data:</h3>
 <pre><code>            ◦    Daily vaccination data is calculated by summing vaccinations administered for each state across dates.
             ◦    Data for territories is excluded.
-            ◦    Vaccination data is further categorized by vaccine type (Pfizer, Moderna, etc.).###</code></pre>
+            ◦    Vaccination data is further categorized by vaccine type (Pfizer, Moderna, Jansen and Novavax).
+            ◦    Vaccination rates are calculated by dividing the cumulative vaccination count by the population over 10 years old </code></pre>
+</div>
+<div id="state-cases-and-deaths-data" class="section level3">
+<h3>5. State Cases and Deaths Data:</h3>
+<pre><code>            ◦    Daily new cases and deaths reported for each state.
+            ◦    Data for territories is excluded.
+            ◦    Cases and Deaths related data were further separated and accounted into rates and cumulative rates.</code></pre>
 </div>
 <div id="merging-data" class="section level3">
-<h3>5 Merging Data:</h3>
-<pre><code>            ◦    State hospitalization and vaccination data are merged by state name to create a combined dataset.
-            ◦    Vaccination rates are calculated by dividing the cumulative vaccination count by the population over 10 years old (obtained from Census data).</code></pre>
+<h3>6 Merging Data:</h3>
+<pre><code>            ◦    State hospitalization, case, death, and vaccination data are merged by state name to create a combined dataset.</code></pre>
 </div>
 <div id="visualization---combined-graph" class="section level3">
 <h3>6 Visualization - Combined Graph:</h3>
 <pre><code>            ◦    A combined ggplot2 plot is created to visualize:
-                 a) Cumulative vaccination rate per 1000 people (y-axis) for each state.
-                 b) Daily hospitalization rate per 1000 people (right y-axis) for each state.
-                 c) Line colors are used to differentiate between vaccination types and hospitalization rates.
-        ◦    The x-axis displays states sorted by their overall vaccination rate.</code></pre>
+                    a) Cumulative vaccination rate per 1000 people (y-axis) for each state.
+                    b) Daily hospitalization rate per 1000 people (right y-axis) for each state.
+                    c) Line colors are used to differentiate between vaccination types and hospitalization rates.
+            ◦    The x-axis displays states sorted by their overall vaccination rate.</code></pre>
 </div>
 <div id="correlation-analysis-optional" class="section level3">
 <h3>7 Correlation Analysis (Optional):</h3>
-<pre><code>        ◦    A subset of the data is created to focus on dates with corresponding vaccination data.
-        ◦    Non-cumulative daily vaccinations are calculated.
-        ◦    Pearson&#39;s correlation coefficient is computed to assess the relationship between non-cumulative vaccinations and hospitalization rates.
+<pre><code>            ◦    A subset of the data is created to focus on dates with corresponding vaccination data.
+            ◦    Non-cumulative daily vaccinations are calculated.
+            ◦    Pearson&#39;s correlation coefficient is computed to assess the relationship between non-cumulative vaccinations and hospitalization rates.
         ◦    A scatter plot is generated to visualize the correlation.</code></pre>
 </div>
 <div id="vaccinated-vs.-unvaccinated-hospitalization-rates" class="section level3">
 <h3>8 Vaccinated vs. Unvaccinated Hospitalization Rates:</h3>
-<pre><code>        ◦    Data on hospitalization rates by vaccination status is loaded from the CDC.
-        ◦    Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.
-        ◦    A line chart is created to compare these rates over time.</code></pre>
+<pre><code>            ◦    Data on hospitalization rates by vaccination status is loaded from the CDC.
+            ◦    Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.
+            ◦    A line chart is created to compare these rates over time.</code></pre>
 <pre><code>##R packages required for to run the script
 
 ## Check for installed packages
