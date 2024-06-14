@@ -77,17 +77,17 @@ State hospitalization, case, death, and vaccination data are merged by state nam
 ### 9. Visualization - Combined Graph:
 ◦ A combined ggplot2 plot is created to visualize:
 
-    a) State-wise Cumulative hospitalizations per 1000 VS lab confirmed total COVID19 cases and pre Omicron cases per 1000 respectively.
+   a) State-wise Cumulative hospitalizations per 1000 VS lab confirmed total COVID19 cases and pre Omicron cases per 1000 respectively.
   
-    b) State-wise Cumulative hospitalizations per 1000 VS lab confirmed total COVID19 deaths and pre Delta deaths per 1000 respectively.
+   b) State-wise Cumulative hospitalizations per 1000 VS lab confirmed total COVID19 deaths and pre Delta deaths per 1000 respectively.
   
-    c) Cumulative national vaccinations per 1000 VS daily hospital admissions with lab confirmed COVID19 hospitalizations.
+   c) Cumulative national vaccinations per 1000 VS daily hospital admissions with lab confirmed COVID19 hospitalizations.
 
-    d) Vaccinated Vs Unvaccinated hospitalized populations
+   d) Vaccinated Vs Unvaccinated hospitalized populations
 
-    e) National daily VOC estimates for Alpha, Delta and Omicron variants for the entire 3 year period of data collection.
+   e) National daily VOC estimates for Alpha, Delta and Omicron variants for the entire 3 year period of data collection.
 
-    f) Regional distribution of daily disease outcomes in cases, hospitalizations and deaths compared to regional cumulative vaccinations per 1000.
+   f) Regional distribution of daily disease outcomes in cases, hospitalizations and deaths compared to regional cumulative vaccinations per 1000.
   
 ```
 ## R packages required for to run the script
