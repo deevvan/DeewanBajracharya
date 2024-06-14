@@ -1,0 +1,131 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 CourierNewPS-BoldMT;\f1\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red25\green25\blue25;\red255\green255\blue255;\red0\green0\blue0;
+\red0\green0\blue233;}
+{\*\expandedcolortbl;;\cssrgb\c12941\c12941\c12941;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;
+\cssrgb\c0\c0\c93333;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid102\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{square\}}{\leveltext\leveltemplateid103\'01\uc0\u9642 ;}{\levelnumbers;}\fi-360\li2160\lin2160 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww26820\viewh15840\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 Read_Me.txt file for R script about manuscript titled \'93\cf2 \cb3 \expnd0\expndtw0\kerning0
+\ul \ulc2 \outl0\strokewidth0 \strokec2 Observations of COVID-19 vaccine coverage and vaccine hesitancy on COVID-19 outbreak: An American ecological study\ulnone \'94\
+\
+\pard\pardeftab720\sl264\slmult1\partightenfactor0
+
+\f1\b0\fs28 \cf0 \cb1 \strokec4 This README file describes the R script for analyzing vaccine hesitancy and hospitalization rates across US states. The script utilizes various R packages for data manipulation, visualization, and statistical analysis.\
+
+\f0\b Data Sources:
+\f1\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 CDC hospitalization data: {\field{\*\fldinst{HYPERLINK "https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD"}}{\fldrslt \cf5 \ul \ulc5 \strokec5 https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD}}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 COVID Tracking Project data: {\field{\*\fldinst{HYPERLINK "https://covidtracking.com/data/download/all-states-history.csv"}}{\fldrslt \cf5 \ul \ulc5 \strokec5 https://covidtracking.com/data/download/all-states-history.csv}}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 US Census data: (paths provided in script)\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 CDC vaccination data: {\field{\*\fldinst{HYPERLINK "https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD"}}{\fldrslt \cf5 \ul \ulc5 \strokec5 https://data.cdc.gov/api/views/unsk-b7fc/rows.csv?accessType=DOWNLOAD}}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 CDC vaccination rates by vaccination status: {\field{\*\fldinst{HYPERLINK "https://data.cdc.gov/api/views/k3na-u7xf/rows.csv?accessType=DOWNLOAD"}}{\fldrslt \cf5 \ul \ulc5 \strokec5 https://data.cdc.gov/api/views/k3na-u7xf/rows.csv?accessType=DOWNLOAD}}\cf5 \ul \ulc5 \strokec5 \
+\pard\tx720\pardeftab720\sl264\slmult1\partightenfactor0
+\cf0 \ulnone \strokec4 \
+\pard\pardeftab720\sl264\slmult1\partightenfactor0
+
+\f0\b \cf0 Script Steps:
+\f1\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Load Libraries:
+\f1\b0  The script begins by loading required R libraries, including dplyr, tidyr, ggplot2, and others for data manipulation and visualization.\
+\ls2\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Load Data:
+\f1\b0  Several datasets are loaded from various sources using read.csv function. The script handles missing values and date formatting for each dataset.\
+\ls2\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 State Hospitalization Data:
+\f1\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Daily hospitalization data is calculated by aggregating hospital admissions for each state across dates.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Data for territories (marked by specific codes) is excluded.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 State Vaccination Data:
+\f1\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Daily vaccination data is calculated by summing vaccinations administered for each state across dates.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Data for territories is excluded.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Vaccination data is further categorized by vaccine type (Pfizer, Moderna, etc.).\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Merging Data:
+\f1\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 State hospitalization and vaccination data are merged by state name to create a combined dataset.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Vaccination rates are calculated by dividing the cumulative vaccination count by the population over 10 years old (obtained from Census data).\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	7	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Visualization - Combined Graph:
+\f1\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 A combinedggplot2 plot is created to visualize:\
+\pard\tx1660\tx2160\pardeftab720\li2160\fi-2160\sl264\slmult1\partightenfactor0
+\ls2\ilvl2\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9642 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Cumulative vaccination rate per 1000 people (y-axis) for each state.\
+\ls2\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9642 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Daily hospitalization rate per 1000 people (right y-axis) for each state.\
+\ls2\ilvl2\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9642 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Line colors are used to differentiate between vaccination types and hospitalization rates.\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 The x-axis displays states sorted by their overall vaccination rate.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	8	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Correlation Analysis (Optional):
+\f1\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 A subset of the data is created to focus on dates with corresponding vaccination data.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Non-cumulative daily vaccinations are calculated.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Pearson's correlation coefficient is computed to assess the relationship between non-cumulative vaccinations and hospitalization rates.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 A scatter plot is generated to visualize the correlation.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl264\slmult1\partightenfactor0
+\ls2\ilvl0
+\f0\b \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	9	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Vaccinated vs. Unvaccinated Hospitalization Rates:
+\f1\b0 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl264\slmult1\partightenfactor0
+\ls2\ilvl1\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Data on hospitalization rates by vaccination status is loaded from the CDC.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.\
+\ls2\ilvl1\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u9702 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 A line chart is created to compare these rates over time.\
+\pard\pardeftab720\sl264\slmult1\partightenfactor0
+
+\f0\b \cf0 \strokec4 \
+
+\f1\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl264\slmult1\pardirnatural\partightenfactor0
+
+\f0\b \cf2 \cb3 \strokec2 \
+}
