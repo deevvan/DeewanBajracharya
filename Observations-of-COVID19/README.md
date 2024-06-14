@@ -36,17 +36,23 @@ Several datasets listed above must be loaded from various sources using read.csv
       
 ### 3. State Hospitalization Data:
 ◦ Daily hospitalization data is calculated by aggregating hospital admissions for each state across dates.
+
 ◦ Data for territories (marked by specific codes) is excluded.
       
 ### 4. State Vaccination Data:
 ◦ Daily vaccination data is calculated by summing vaccinations administered for each state across dates.
+
 ◦ Data for territories is excluded.
+
 ◦ Vaccination data is further categorized by vaccine type (Pfizer, Moderna, Jansen and Novavax).
+
 ◦ Vaccination rates are calculated by dividing the cumulative vaccination count by the population over 10 years old 
       
 ### 5. State Cases and Deaths Data:
 ◦ Daily new cases and deaths reported for each state.
+
 ◦ Data for territories is excluded.
+
 ◦ Cases and Deaths related data were further separated and accounted into rates and cumulative rates.
       
 ### 6. Merging Data:
@@ -54,20 +60,29 @@ State hospitalization, case, death, and vaccination data are merged by state nam
       
 ### 7. Visualization - Combined Graph:
 ◦ A combined ggplot2 plot is created to visualize:
+
   a) Cumulative vaccination rate per 1000 people (y-axis) for each state.
+  
   b) Daily hospitalization rate per 1000 people (right y-axis) for each state.
+  
   c) Line colors are used to differentiate between vaccination types and hospitalization rates.
+  
 ◦ The x-axis displays states sorted by their overall vaccination rate.
       
 ### 8. Correlation Analysis (Optional):
 ◦ A subset of the data is created to focus on dates with corresponding vaccination data.
+
 ◦ Non-cumulative daily vaccinations are calculated.
+
 ◦ Pearson's correlation coefficient is computed to assess the relationship between non-cumulative vaccinations and hospitalization rates.
+
 ◦ A scatter plot is generated to visualize the correlation.
       
 ### 9. Vaccinated vs. Unvaccinated Hospitalization Rates:
 ◦ Data on hospitalization rates by vaccination status is loaded from the CDC.
+
 ◦ Monthly hospitalization rates for vaccinated and unvaccinated individuals are calculated.
+
 ◦ A line chart is created to compare these rates over time.
 
 
