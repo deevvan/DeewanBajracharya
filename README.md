@@ -1,4 +1,5 @@
-![picture](vaccine.png)
+<img width="779" alt="image" src="https://github.com/user-attachments/assets/4898a819-b640-4730-92fd-21e081e2bb57">
+
 
 # Observations of COVID-19 vaccine coverage and vaccine hesitancy on COVID-19 outbreak: An American ecological study 
 
