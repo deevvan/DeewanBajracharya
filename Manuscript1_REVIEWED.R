@@ -1,6 +1,4 @@
-
-  
-setwd("/Users/DB/Library/CloudStorage/GoogleDrive-bajracharyadeewan@outlook.com/My Drive/PHDclasses/research COV/R files/variant and hosp DATA/automatic_coder")
+setwd("/path/to/working/directory/")
 
 library(dplyr)
 library(tidyr)
@@ -17,8 +15,8 @@ library(nnet)
 #library(plyr)
 #library(ggpubr)
 
+# Loading Rdata file containing saved script environment
 load ("Manuscript1.Rdata")
-
 
 hdata_CDC <- read.csv("https://healthdata.gov/api/views/g62h-syeh/rows.csv?accessType=DOWNLOAD", header = T)
 
